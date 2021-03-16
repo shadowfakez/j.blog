@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(3);
-        return view('admin.categories.index', compact('categories'));
+        $posts = Post::paginate(3);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -26,7 +28,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        $categories = Category::pluck('title', 'id')->all();
+        $tags = Tag::pluck('title', 'id')->all();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -40,9 +44,9 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
         ]);
-        Category::create($request->all());
-        /*$request->session()->flash('success', 'Категория добавлена');*/
-        return redirect()->route('categories.index')->with('success', 'Категория добавлена');
+        dd($request->all());
+
+        return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
     /**
@@ -64,8 +68,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.categories.edit', compact('category'));
+        return view('admin.posts.edit');
     }
 
     /**
@@ -80,10 +83,7 @@ class CategoryController extends Controller
         $request->validate([
             'title' => 'required',
         ]);
-        $category = Category::find($id);
-        $category->slug = null;
-        $category->update($request->all());
-        return redirect()->route('categories.index')->with('success', 'Изменения сохранены');
+        return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 
     /**
@@ -96,6 +96,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Категория удалена');
+        return redirect()->route('posts.index')->with('success', 'Статья удалена');
     }
 }
