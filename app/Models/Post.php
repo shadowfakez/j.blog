@@ -54,7 +54,7 @@ class Post extends Model
     public function getImage()
     {
         if (!$this->thumbnail) {
-            return asset('no-image.png');
+            return asset("no-image.png");
         }
         return asset("storage/{$this->thumbnail}");
     }
