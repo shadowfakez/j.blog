@@ -10,6 +10,8 @@
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/debugging.html
 
 // Production
+use Illuminate\Support\Facades\Auth;
+
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 ini_set('display_errors', 0);
 
@@ -26,7 +28,7 @@ $config = array();
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_authentication
 
 $config['authentication'] = function () {
-    return false;
+        return true;
 };
 
 /*============================ License Key ============================================*/
@@ -36,7 +38,8 @@ $config['licenseName'] = '';
 $config['licenseKey']  = '';
 
 /*============================ CKFinder Internal Directory ============================*/
-// https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
+// https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration
+//.html#configuration_options_privateDir
 
 $config['privateDir'] = array(
     'backend' => 'default',

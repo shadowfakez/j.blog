@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+// admin:
 
 mix.styles([
     'resources/assets/admin/plugins/fontawesome-free/css/all.min.css',
@@ -30,3 +31,20 @@ mix.copyDirectory('resources/assets/admin/img', 'public/assets/admin/img');
 mix.copyDirectory('resources/assets/admin/plugins/fontawesome-free/webfonts', 'public/assets/admin/webfonts');
 
 mix.copy('resources/assets/admin/css/adminlte.min.css.map', 'public/assets/admin/css/adminlte.min.css.map');
+
+// front:
+
+mix.styles([
+    'resources/assets/front/css/style.css',
+    'resources/assets/front/css/coin-slider.css',
+    ],'public/assets/front/css/front.css');
+
+mix.scripts([
+    'resources/assets/front/js/cufon-yui.js',
+    'resources/assets/front/js/cufon-georgia.js',
+    'resources/assets/front/js/jquery-1.4.2.min.js',
+    'resources/assets/front/js/script.js',
+    'resources/assets/front/js/coin-slider.min.js',
+], 'public/assets/front/js/front.js');
+
+mix.copyDirectory('resources/assets/front/images', 'public/assets/front/images');
