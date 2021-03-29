@@ -73,7 +73,9 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <img src="{{ $post->getImage() }}" alt="" class="img-thumbnail mt-2" width="200px">
+                                        <img src="{{ $post->getImage() }}" alt="" class="img-thumbnail
+                                        mt-2"
+                                             width="200px">
                                     </div>
                                 </div>
                             </div>

@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(3);
+        $categories = Category::paginate(10);
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -60,7 +60,7 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -90,12 +90,15 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
         $category = Category::find($id);
+        if($category->posts->count()) {
+            return redirect()->route('categories.index')->with('error', 'Ошибка! У категории есть записии!');
+        }
         $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Категория удалена');
+        return redirect()->route('categories.index')->with('success', 'Категория удалена.');
     }
 }
