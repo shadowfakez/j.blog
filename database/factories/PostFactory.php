@@ -28,7 +28,8 @@ class PostFactory extends Factory
             'content' => $this->faker->paragraph(3),
             'category_id' => $this->faker->numberBetween($min = 1, $max = 4),
             'views' => $this->faker->numberBetween($min = 1, $max = 500),
-            'thumbnail' => $this->faker->imageUrl($width = 640, $height = 480),
+            'thumbnail' => $this->faker->imageUrl($width = 640,
+                $height = 480, 'cats', true, 'Faker'),
             'created_at' => $this->faker->dateTime(),
             'updated_at' => $this->faker->dateTime(),
         ];

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">>
+<html lang="en">
 <head>
     <title>@yield('title')</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -11,11 +11,11 @@
         <div class="header_resize">
             <div class="menu_nav">
                 <ul>
-                    <li class="active"><a href="index.html"><span>Home Page</span></a></li>
-                    <li><a href="support.html"><span>Support</span></a></li>
-                    <li><a href="about.html"><span>About Us</span></a></li>
-                    <li><a href="blog.html"><span>Blog</span></a></li>
-                    <li><a href="contact.html"><span>Contact Us</span></a></li>
+                    <li class="active"><a href="{{ route('home') }}"><span>Главная</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'news']) }}"><span>Новости</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'matches']) }}"><span>Матчи</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'analytics']) }}"><span>Аналитика</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'history']) }}"><span>История</span></a></li>
                 </ul>
             </div>
             <div class="logo">

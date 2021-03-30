@@ -56,7 +56,9 @@ class Post extends Model
     {
         if (!$this->thumbnail) {
             return asset("no-image.png");
-        }
+        }elseif (substr($this->thumbnail, 0, 4) == 'http') {
+            return $this->thumbnail;
+        }else
         return asset("storage/{$this->thumbnail}");
     }
 }

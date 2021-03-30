@@ -35,7 +35,7 @@ p {
 }
 a {
 	color:#0087c7;
-	text-decoration:underline;
+	text-decoration: none;
 }
 .header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar {
 	margin:0;

@@ -17,15 +17,12 @@
 <div class="mainbar">
 
     @foreach($posts as $post)
-        <div class="articletitle"><h2><a href="{{ route('posts.single', ['slug' => $post->slug]) }}" class="rm">{{ $post->title
-        }}</a></h2></div>
+        <div class="articletitle"><h2><a href="{{ route('posts.single', ['slug' => $post->slug]) }}" class="rm">{{ $post->title}}</a></h2></div>
         <div class="article">
-        <p class="infopost">Posted <span class="date">{{ $post->created_at }}</span> |  <a href="{{ route
-        ('categories.single', ['slug' => $post->category->slug]) }}">{{
-            $post->category->title }}</a> <a href="#" class="com"><span><i class="fa fa-eye"></i>{{ $post->views
+        <p class="infopost">Posted <span class="date">{{ $post->created_at }}</span> |  <a href="{{ route('categories.single', ['slug' => $post->category->slug]) }}">{{ $post->category->title }}</a> <a href="#" class="com"><span><i class="fa fa-eye"></i>{{ $post->views
             }}</span></a></p>
         <div class="clr"></div>
-        <div class="img"><img src="{{ $post->getImage() }}" width="620" height="auto" alt="no-image.png" class="fl"
+        <div class="img"><img src="{{ $post->getImage() }}" width="620" height="auto" alt="" class="fl"
             /></div>
         <div class="post_content">
             {!! $post->description !!}

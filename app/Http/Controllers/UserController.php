@@ -51,7 +51,7 @@ class UserController extends Controller
         if (Auth::attempt([
             'email' => $request->email,
             'password' => $request->password,
-        ])) {
+        ], $request->remember)) {
                 session()->flash('success', "Добро пожаловать!");
                 if (Auth::user()->is_admin) {
                     return redirect()->route('admin.index');

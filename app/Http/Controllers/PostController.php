@@ -9,12 +9,15 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('category')->orderBy('id', 'desc')->paginate(1);
+        $posts = Post::with('category')->orderBy('id', 'desc')->paginate(5);
         return view('posts.index', compact('posts'));
     }
 
     public function show($slug)
     {
-        return view('posts.show');
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $post->views += 1;
+        $post->update();
+        return view('posts.show', compact('post'));
     }
 }
