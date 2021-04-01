@@ -1236,17 +1236,26 @@ SELECT|sys.sys_config
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="354" parent="291" name="users_email_unique">
+    <index id="354" parent="291" name="users_name_unique">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="355" parent="291" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="291" name="PRIMARY">
+    <key id="356" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="356" parent="291" name="users_email_unique">
+    <key id="357" parent="291" name="users_name_unique">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>users_name_unique</UnderlyingIndexName>
+    </key>
+    <key id="358" parent="291" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
