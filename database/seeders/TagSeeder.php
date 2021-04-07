@@ -15,40 +15,40 @@ class TagSeeder extends Seeder
     public function run()
     {
         DB::table('tags')->insert([
-            'title' => 'Серия А',
-            'slug' => 'serie_a',
+            'title' => 'Тег 1',
+            'slug' => 'tag_1',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Лига Чемпионов',
-            'slug' => 'champions_league',
+            'title' => 'Тег 2',
+            'slug' => 'tag_2',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Сборные',
-            'slug' => 'nationals',
+            'title' => 'Тег 3',
+            'slug' => 'tag_3',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Трансферы',
-            'slug' => 'transfers',
+            'title' => 'Тег 4',
+            'slug' => 'tag_4',
         ]);
         DB::table('tags')->insert([
-            'title' => 'День матча',
-            'slug' => 'matchday',
+            'title' => 'Тег 5',
+            'slug' => 'tag_5',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Контракты',
-            'slug' => 'contracts',
+            'title' => 'Тег 6',
+            'slug' => 'tag_6',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Фото',
-            'slug' => 'photos',
+            'title' => 'Тег 7',
+            'slug' => 'tag_7',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Интервью',
-            'slug' => 'interview',
+            'title' => 'Тег 8',
+            'slug' => 'tag_8',
         ]);
         DB::table('tags')->insert([
-            'title' => 'Аналитика',
-            'slug' => 'analytics',
+            'title' => 'Тег 9',
+            'slug' => 'tag_9',
         ]);
 
     }

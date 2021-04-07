@@ -42,10 +42,33 @@
                         Новая статья
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('logout') }}">
+                        <h3>Logout</h3>
+                    </a>
+                </li>
             </ul>
         </div>
     @endif
 @endauth
+
+@guest()
+        <div class="gadget" style="border: 2px solid #ebebeb;">
+            <ul class="ex_menu">
+                <li>
+                    <a href="{{ route('login') }}">
+                        <h3>Login</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('register.store') }}">
+                        <h3>Sign up</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+@endguest
 
     <div class="gadget">
         <h2 class="star"><span>Популярные</span></h2>

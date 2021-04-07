@@ -16,20 +16,20 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'title' => 'Новости',
-            'slug' => 'news',
+            'title' => 'Категория 1',
+            'slug' => 'category_1',
         ]);
         DB::table('categories')->insert([
-            'title' => 'Матчи',
-            'slug' => 'matches',
+            'title' => 'Категория 2',
+            'slug' => 'category_2',
         ]);
         DB::table('categories')->insert([
-            'title' => 'Аналитика',
-            'slug' => 'analytics',
+            'title' => 'Категория 3',
+            'slug' => 'category_3',
         ]);
         DB::table('categories')->insert([
-            'title' => 'История',
-            'slug' => 'history',
+            'title' => 'Категория 4',
+            'slug' => 'category_4',
         ]);
     }
 }
