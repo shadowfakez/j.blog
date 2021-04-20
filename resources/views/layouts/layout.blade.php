@@ -12,10 +12,13 @@
             <div class="menu_nav">
                 <ul>
                     <li class="active"><a href="{{ route('home') }}"><span>Главная</span></a></li>
-                    <li><a href="{{ route('categories.single', ['slug' => 'news']) }}"><span>Новости</span></a></li>
-                    <li><a href="{{ route('categories.single', ['slug' => 'matches']) }}"><span>Матчи</span></a></li>
-                    <li><a href="{{ route('categories.single', ['slug' => 'analytics']) }}"><span>Аналитика</span></a></li>
-                    <li><a href="{{ route('categories.single', ['slug' => 'history']) }}"><span>История</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'category_1']) }}"><span>Категория 1</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'category_2']) }}"><span>Категория
+                                2</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'category_3']) }}"><span>Категория
+                                3</span></a></li>
+                    <li><a href="{{ route('categories.single', ['slug' => 'category_4']) }}"><span>Категория
+                                4</span></a></li>
                 </ul>
             </div>
             <div class="logo">
